@@ -18,7 +18,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Freedom\\ApiResource\\": "src/TwoFactorAuth/"
+      "Freedom\\TwoFactorAuth\\": "src/TwoFactorAuth/"
     }
   },
   "extra": {
