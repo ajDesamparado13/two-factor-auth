@@ -16,15 +16,15 @@ class LaravelServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/two-factor-auth.php' => config_path('two-factor-auth.php'),
+            __DIR__.'/../../config/two-factor-auth.php' => config_path('two-factor-auth.php'),
         ], 'config');
-        $this->mergeConfigFrom(__DIR__.'/../config/two-factor-auth.php', 'two-factor-auth');
+        $this->mergeConfigFrom(__DIR__.'/../../config/two-factor-auth.php', 'two-factor-auth');
 
         if (! class_exists('CreateActivityLogTable')) {
             $timestamp = date('Y_m_d_His', time());
 
             $this->publishes([
-                __DIR__.'/../migrations/create_oauth_auth_code.php.stub' => database_path("/migrations/{$timestamp}_create_oauth_auth_code.php"),
+                __DIR__.'/../../migrations/create_oauth_auth_code.php.stub' => database_path("/migrations/{$timestamp}_create_oauth_auth_code.php"),
             ], 'migrations');
         }
     }
