@@ -8,7 +8,7 @@ trait TwoFactorAuthenticable
 {
     public function authenticationCode()
     {
-        return $this->hasMany(Config::get('two-factor-auth.model'),'user_id','id')
+        return $this->hasOne(Config::get('two-factor-auth.model'),'user_id','id')
         ->where('user_type',get_called_class())
         ->where('disabled',0)
         ->orderBy('created_at','desc');
