@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateOauthAuthCode extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('oauth_auth_code', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('code');
+            $table->bigInteger('reference_id')->unsigned();
+            $table->string('user_type');
+            $table->unsignedInteger('user_id');
+            $table->timestamp('expire_on');
+            $table->tinyInteger('disabled')->default(0);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('oauth_auth_code');
+    }
+}

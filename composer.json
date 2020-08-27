@@ -1,0 +1,31 @@
+{
+  "name": "freedom/two-factor-auth",
+  "description": "Laravel Two Factor Authentication",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Allen Jay Desamparado",
+      "email": "ajDesamparado13@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "illuminate/auth": "~5.0|~6.0|~7.0",
+    "illuminate/support": "~5.0|~6.0|~7.0",
+    "illuminate/http": "~5.0|~6.0|~7.0",
+    "illuminate/config": "~5.0|~6.0|~7.0",
+    "illuminate/contracts": "~5.0|~6.0|~7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Freedom\\ApiResource\\": "src/TwoFactorAuth/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Freedom\\TwoFactorAuth\\Providers\\LaravelServiceProvider"
+      ]
+    }
+  }
+}
